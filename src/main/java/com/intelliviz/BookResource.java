@@ -7,11 +7,10 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.util.Collection;
 
-@Path("/") // This is appended to the BASE_URI defined in Main class
+@Path("/books") // This is appended to the BASE_URI defined in Main class
 public class BookResource {
     BookDao dao = new BookDao();
 
-    @Path("/books")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Collection<Book> getBooks() {

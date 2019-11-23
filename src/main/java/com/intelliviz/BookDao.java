@@ -29,7 +29,6 @@ public class BookDao {
     }
 
     Collection<Book> getBooks() {
-        System.out.println("In getBooks");
         return books.values();
     }
 
