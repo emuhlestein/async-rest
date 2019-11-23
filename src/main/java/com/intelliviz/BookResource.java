@@ -7,6 +7,9 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.util.Collection;
 
+/**
+ * Books endpoint.
+ */
 @Path("/books") // This is appended to the BASE_URI defined in Main class
 public class BookResource {
     BookDao dao = new BookDao();
