@@ -4,6 +4,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import java.util.Collection;
 
@@ -12,7 +13,10 @@ import java.util.Collection;
  */
 @Path("/books") // This is appended to the BASE_URI defined in Main class
 public class BookResource {
-    BookDao dao = new BookDao();
+    // This gets recreated for each endpoint invocation BAD-Need to inject instead of instantiate.
+    //BookDao dao = new BookDao();
+    @Context
+    BookDao dao;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
